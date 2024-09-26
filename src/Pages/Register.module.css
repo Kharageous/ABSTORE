@@ -1,0 +1,190 @@
+/* Base Styles for Animation (hidden by default) */
+.animateSpan {
+  display: none; /* Hide animation by default */
+}
+
+/* Media Query for Large Screens */
+@media (min-width: 1024px) {
+  /* Make sure the animation spans are visible only on large screens */
+  .animateSpan {
+    position: absolute;
+    left: 25%;
+    top: 50%;
+    width: 32px;
+    height: 6px;
+    background: #2c4766;
+    border-radius: 8px;
+    transform-origin: 128px;
+    transform: scale(3.5) rotate(calc(var(--i) * (360deg / 50)));
+    animation: animateBlink 3s linear infinite;
+    animation-delay: calc(var(--i) * (3s / 50));
+    display: block; /* Display animation on large screens */
+  }
+}
+
+/* Animation Keyframes */
+@keyframes animateBlink {
+  0% {
+    background: #0ef;
+  }
+  25% {
+    background: #2c4766;
+  }
+}
+
+/* Page Background */
+body {
+  margin: 0;
+  padding: 0;
+  background: url("../assets/bg.jpeg") no-repeat center center fixed;
+  background-size: cover;
+  background-color: #000; /* Fallback color */
+}
+
+/* Page Styles */
+.registerPage {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* The background is applied to the body, so it doesn't need to be repeated here */
+}
+
+.container1 {
+  position: relative;
+  width: 90%;
+  max-width: 500px;
+  padding: 20px;
+}
+
+.registerBox {
+  width: 100%;
+}
+
+.registerBox form {
+  width: 100%;
+  padding: 0 20px;
+}
+
+.h2 {
+  font-size: 2.5em; /* Larger title for better visibility */
+  color: #0ef;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.inputBox {
+  position: relative;
+  margin: 15px 0; /* Reduced margin for a more compact form */
+}
+
+.inputBox input {
+  width: 100%;
+  height: 50px;
+  background: transparent;
+  border: 2px solid #2c4766;
+  outline: none;
+  border-radius: 40px;
+  font-size: 1em;
+  color: #fff;
+  padding: 0 20px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.inputBox input:focus,
+.inputBox input:valid {
+  border-color: #0ef;
+  box-shadow: 0 0 5px rgba(0, 239, 255, 0.5);
+}
+
+.inputBox label {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  font-size: 1em;
+  color: #fff;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.inputBox input:focus ~ label,
+.inputBox input:valid ~ label {
+  top: 0;
+  font-size: 0.75em;
+  background: rgba(31, 41, 55, 0.7);
+  padding: 0 6px;
+  color: #0ef;
+}
+
+.error {
+  color: red;
+  font-size: 0.85em;
+  margin-top: 5px;
+}
+
+.btn {
+  width: 100%;
+  height: 45px;
+  background: #0ef;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 1em;
+  color: #1f293a;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background: #0c9;
+}
+
+.signupLink {
+  margin: 20px 0 10px;
+  text-align: center;
+}
+
+.signupLink a {
+  font-size: 1em;
+  color: #0ef;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.signupLink p {
+  font-size: 1em;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.signupLink a:hover {
+  text-decoration: underline;
+}
+
+/* Other styles remain unchanged */
+
+.googleSignUp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  cursor: pointer;
+  color: #fff; /* Default text color, it will be overridden by the icon color */
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.googleIcon {
+  font-size: 24px;
+  color: red; /* Set the color of the Google icon to red */
+  margin-right: 10px;
+}
+
+.googleSignUp span {
+  font-size: 0.9em;
+}

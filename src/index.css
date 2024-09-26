@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (max-width: 640px) {
+  video {
+    height: auto; /* Allows the video to scale naturally */
+    width: 100%; /* Ensures the video fits the container width */
+  }
+
+  .text-center {
+    padding: 2rem 1rem; /* Reduces padding on smaller screens */
+  }
+}
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.slide-in {
+  animation: slide-in 0.5s ease-out;
+}
+
+.fade-in {
+  animation: fade-in 0.5s ease-out;
+}
+/* Add custom form styles */
+input,
+select,
+textarea {
+  @apply border rounded-md p-2 bg-gray-400 text-black;
+}
+
+/* Raindrop styling */
+.raindrop {
+  position: absolute;
+  width: 2px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.5);
+  bottom: 100%;
+  animation: fall linear infinite;
+  opacity: 0; /* Start invisible */
+}
+
+/* Keyframes for the raindrop animation */
+@keyframes fall {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+/* Generating multiple raindrops with varying positions and timings */
+.raindrop:nth-child(1) {
+  left: 10%;
+  animation-duration: 1.5s;
+  animation-delay: 0s;
+}
+.raindrop:nth-child(2) {
+  left: 20%;
+  animation-duration: 1.2s;
+  animation-delay: 0.5s;
+}
+.raindrop:nth-child(3) {
+  left: 30%;
+  animation-duration: 1.8s;
+  animation-delay: 0.2s;
+}
+.raindrop:nth-child(4) {
+  left: 40%;
+  animation-duration: 1.3s;
+  animation-delay: 0.8s;
+}
+.raindrop:nth-child(5) {
+  left: 50%;
+  animation-duration: 1.6s;
+  animation-delay: 0.1s;
+}
+.raindrop:nth-child(6) {
+  left: 60%;
+  animation-duration: 1.4s;
+  animation-delay: 0.6s;
+}
+.raindrop:nth-child(7) {
+  left: 70%;
+  animation-duration: 1.7s;
+  animation-delay: 0.3s;
+}
+.raindrop:nth-child(8) {
+  left: 80%;
+  animation-duration: 1.5s;
+  animation-delay: 0.4s;
+}
+.raindrop:nth-child(9) {
+  left: 90%;
+  animation-duration: 1.9s;
+  animation-delay: 0.7s;
+}
+.raindrop:nth-child(10) {
+  left: 95%;
+  animation-duration: 1.3s;
+  animation-delay: 0.9s;
+}
